@@ -1,0 +1,49 @@
+%% Filename: quicksort.vimwiki
+%% Author: Iván Ruvalcaba
+%% Contact: <ivanruvalcaba[at]disroot[dot]org>
+%% Created: 10 Jun 2019 07:27:11
+%% Last Modified: 11 Jun 2019 12:38:14
+
+= Contents =
+    - [[#Quicksort|Quicksort]]
+
+= Quicksort =
+
+Este algoritmo superó significativamente al algoritmo de ordenamiento
+_merge sort_ en los escenarios donde se presentaba el mejor de los casos
+y fue rápidamente adoptado como el algoritmo de ordenamiento
+predeterminado de Unix, así como también, en su implementación en el
+lenguaje de programación Java. Al utilizar una estrategia similar al
+algoritmo de la ordenamiento «merge sort», _quicksort_ logra velocidades
+promedio mucho más rápidas en el mejor de los casos. Desafortunadamente,
+la complejidad del peor de los casos es tan mala como la del algoritmo
+de ordenamiento «burbuja»: *O(n²)*.
+
+Quicksort opera de forma recursiva, bajo ciertas circunstancias, sobre
+determinados fragmentos o partes de la colección completa,
+intercambiando la posición de los elementos para establecer un orden. A
+esta elección de fragmentos se le denomina *esquema de particionado* y
+normalmente incluye también la acción de intercambiar la posición de los
+elementos de la colección y no únicamente eligiendo un índice de
+separación (_split index_). La elección se realiza eligiendo un elemento
+de _pivote_, cuyo valor es empleado como parámetro al compararlo con el
+resto de elementos contenidos en la colección.
+
+%% Por lo tanto, la quid de la cuestión es: ¿cómo elegir esas partes?
+
+Por medio del proceso de intercambio, todo elemento que sea menor que el
+valor de pivote se ubica de un lado de la colección y del lado contrario
+todos aquellos elementos cuyo valor sea mayor que el elemento pivote.
+Una vez que el algoritmo establece un ordenamiento adecuado, de forma
+ascendente por un lado y descendente del lado contrario, se procede a
+realizar la separación de la secuencia en dos fragmentos, justamente en
+la posición donde ambas se intersectan, para posteriormente comenzar el
+proceso nuevamente a partir de los nuevos fragmentos.
+
+La siguiente ilustración muestra la selección y el ordenamiento de los
+elementos en función de la colección de ejemplo. Mientras que las
+particiones en el siguiente ejemplo son de un solo elemento de longitud
+en comparación con el resto, el mismo proceso se aplicaría si éstas
+fueran secuencias más largas:
+
+{{file:./img/quicksort.png}}

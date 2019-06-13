@@ -1,0 +1,13 @@
+{
+    "name": "vimwiki-workflow",
+    "version": "0.1.0",
+    "description": "A simple vimwiki workflow.",
+    "author": "Iván Ruvalcaba <ivanruvalcaba@protonmail.com>",
+    "license": "GPL-3.0",
+    "scripts": {
+        "serve": "browser-sync start --server --startPath=public_html/index.html --files=public_html/**/*.html --logLevel=warn"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.26.3"
+    }
+}
